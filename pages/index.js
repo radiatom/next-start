@@ -1,17 +1,18 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Create Next App</title>
+                <title>App</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main>
-              <img src="/img/photo_2023-09-26_16-46-58 (1).jpg" alt="foto" />
+              <Image src="/img/photo_2023-09-26_16-46-58 (1).jpg" alt="foto" height={200} width={200}/>
                 <h1 className={styles.title}>
                     <Link href="/posts/first-post" >First post link</Link>
                 </h1>
@@ -28,7 +29,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Powered by <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
+                    Powered by 
                 </a>
             </footer>
 
