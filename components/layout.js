@@ -8,6 +8,7 @@ const name = "Velychko Vitalii";
 export const siteTitle = "Next.js Sample Website";
 
 const Layout=({ children, home })=> {
+    
     return (
         <div className={styles.container}>
             <Head>
