@@ -14,10 +14,11 @@ export default function Home() {
             </Head>
             <section className={utilStyles.headingMd}>
                 <p
-                    className={clsx({
-                        [utilStyles.backGroundColorRed]: change === true,
-                        [utilStyles.backGroundColorYellow]: change === false,
-                    })}
+                    // className={clsx({
+                    //     [utilStyles.backGroundColorRed]: change === true,
+                    //     [utilStyles.backGroundColorYellow]: change === false,
+                    // })}
+                    className={change?utilStyles.backGroundColorRed:utilStyles.backGroundColorYellow}
                 >
                     Energetic developer with enthusiasm for creating project logic. I have the experience of a private
                     entrepreneur. Interested in developing and improving own programming skills. Ready to work in the office in
