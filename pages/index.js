@@ -4,6 +4,8 @@ import utilStyles from "../styles/utils.module.scss";
 import { useState } from "react";
 import clsx from "clsx";
 import { getSortedPostsData } from "../lib/posts";
+import Date from "../components/date";
+import Link from "next/link";
 
 export async function getStaticProps() {
     const allPostsData = getSortedPostsData();
@@ -40,17 +42,17 @@ export default function Home({ allPostsData }) {
                 </p>
                 <button onClick={() => setChange(!change)}>Changing color</button>
             </section>
-            
+
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>
                     {allPostsData.map(({ id, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            {title}
+                            <Link href={`/posts/${id}`}>{title}</Link>
                             <br />
-                            {id}
-                            <br />
-                            {date}
+                            <small className={utilStyles.lightText}>
+                                <Date dateString={date} />
+                            </small>
                         </li>
                     ))}
                 </ul>
